@@ -1,16 +1,46 @@
-# React + Vite
+# Appointment Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A simple and responsive appointment management board built for the Full Stack Developer Intern practical task.
 
-Currently, two official plugins are available:
+The application allows a small team to view, add, update, complete, and cancel appointments while preventing overlapping time slots.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- View existing appointments
+- Add a new appointment
+- Edit scheduled appointments
+- Cancel appointments
+- Mark appointments as completed
+- Filter appointments by date
+- Filter appointments by status
+- Search appointments by title or description
+- Validate required fields
+- Validate that the end time is after the start time
+- Prevent overlapping appointments
+- Keep cancelled appointments visible and clearly marked
+- Show success and error messages
+- Persist appointments using browser LocalStorage
+- Responsive design for desktop, tablet, and mobile
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Application Flow
 
-## Expanding the Oxlint configuration
+1. When the application opens, existing sample appointments are displayed.
+2. The user can filter appointments by date or status.
+3. The user can click **New Appointment** to create an appointment.
+4. The user enters the title, description, date, start time, and end time.
+5. The application validates the required information.
+6. The application checks that the end time is after the start time.
+7. The application checks whether the selected time overlaps with another active appointment.
+8. If all information is valid, the appointment is added to the board.
+9. Scheduled appointments can later be edited, completed, or cancelled.
+10. Cancelled appointments remain visible on the board and are clearly marked as cancelled.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Appointment Validation
+
+The application prevents invalid appointment time ranges.
+
+For example:
+
+```text
+10:00 - 11:00
+11:00 - 12:00
